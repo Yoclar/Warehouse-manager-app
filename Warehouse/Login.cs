@@ -11,18 +11,18 @@ namespace Warehouse
 {
     internal class Login
     {
-        
+
         public Login()
         {
-            
+
         }
-        public bool Loginin(string username,DataBaseConnect db)
+        public bool Loginin(string username, DataBaseConnect db)
         {
             string userquery = $"SELECT * FROM users WHERE name LIKE \"{username}\"";
             MySqlDataReader reader = db.ExecuteQuery(userquery);
-            bool beszéd_s = reader.Read();
+            bool foundUser = reader.Read();
             reader.Close();
-            return beszéd_s;
+            return foundUser;
         }
     }
 }
