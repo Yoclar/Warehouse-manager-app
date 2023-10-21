@@ -1,0 +1,15 @@
+﻿<Window x:Class="Warehouse.BasicUserInterFace"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warehouse"
+        mc:Ignorable="d"
+        Title="BasicUserInterFace" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="ItemName" Content="Item name" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="390" FontSize="30"/>
+        <ComboBox x:Name="Where" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Where_SelectionChanged"/>
+        <Label x:Name="ItemCount" Content="Item count" HorizontalAlignment="Left" Margin="400,55,0,0" VerticalAlignment="Top" Width="390" FontSize="30"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Height="34" Width="103" Click="Button_Click"/>
+    </Grid>
+</Window>

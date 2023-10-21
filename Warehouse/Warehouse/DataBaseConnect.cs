@@ -10,10 +10,14 @@ namespace Warehouse
 {
     public class DataBaseConnect
     {
+        string server = "localhost";
+        string database = "warehouse"; //Name of the databse
+        string uid = "root";
+        string password = "";
         private MySqlConnection connection;
 
         // Constructor
-        public DataBaseConnect(string server, string database, string uid, string password)
+        public DataBaseConnect()
         {
             Initialize(server, database, uid, password);
         }

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\gitrepo\\Warehouse\\Warehouse\\Warehouse.csproj": {}
+    "F:\\programok\\warehouse\\Warehouse\\Warehouse\\Warehouse.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\gitrepo\\Warehouse\\Warehouse\\Warehouse.csproj": {
+    "F:\\programok\\warehouse\\Warehouse\\Warehouse\\Warehouse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\gitrepo\\Warehouse\\Warehouse\\Warehouse.csproj",
+        "projectUniqueName": "F:\\programok\\warehouse\\Warehouse\\Warehouse\\Warehouse.csproj",
         "projectName": "Warehouse",
-        "projectPath": "C:\\Users\\user\\gitrepo\\Warehouse\\Warehouse\\Warehouse.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\gitrepo\\Warehouse\\Warehouse\\obj\\",
+        "projectPath": "F:\\programok\\warehouse\\Warehouse\\Warehouse\\Warehouse.csproj",
+        "packagesPath": "C:\\Users\\Kristóf\\.nuget\\packages\\",
+        "outputPath": "F:\\programok\\warehouse\\Warehouse\\Warehouse\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kristóf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
