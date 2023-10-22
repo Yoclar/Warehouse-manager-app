@@ -25,9 +25,10 @@ namespace Warehouse
     public partial class MainWindow : Window
     {
         
-        
+
         public DataBaseConnect db = new DataBaseConnect();
         public MainWindow()
+                
         {
             InitializeComponent();
             db.OpenConnection();
@@ -36,13 +37,46 @@ namespace Warehouse
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Login log = new Login();
+            BasicUserInterFace login = new BasicUserInterFace();
             if (log.Loginin(Username.Text, db))
             {
-                BasicUserInterFace login = new BasicUserInterFace();
                 login.Show();
                 this.Close();
             }
 
         }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the username entered in the UserRegister TextBox
+            string username = UserRegister.Text;
+            // Check if the IsEmployeeCheckbox is checked and set isEmployed accordingly
+            bool isEmployed = IsEmployeeCheckbox.IsChecked ?? false;
+            // Create an instance of the Register class with a database connection
+            Register userRegister = new Register(new DataBaseConnect());
+            // Call the RegisterUser method to attempt user registration
+            bool registrationSuccess = userRegister.RegisterUser(username, isEmployed);
+
+            if (registrationSuccess)
+            {
+                MessageBox.Show("Registration successful!");
+                this.Close();
+                
+                BasicUserInterFace newLogin = new BasicUserInterFace();
+                newLogin.Show();
+               
+            }
+            else
+            {
+                MessageBox.Show("Registration failed. Please try again.");
+            }
+
+
+
+
+
+        }
+
+    
     }
 }

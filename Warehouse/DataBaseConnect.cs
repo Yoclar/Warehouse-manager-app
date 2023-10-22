@@ -59,5 +59,10 @@ namespace Warehouse
             return cmd.ExecuteNonQuery();
 
         }
+
+        public MySqlConnection GetConnection()
+        {
+            return connection;
+        }
     }
 }
