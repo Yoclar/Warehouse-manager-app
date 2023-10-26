@@ -32,7 +32,7 @@ namespace Warehouse
                 MySqlCommand cmd = new MySqlCommand(insertUserQuery, db.GetConnection());
 
                 // Set the parameters for the query
-                cmd.Parameters.AddWithValue("@employee", isEmployed);
+                cmd.Parameters.AddWithValue("@employee", isEmployed ? 1 : 0); // 1 for employee, 0 for non-employee
                 cmd.Parameters.AddWithValue("@name", username);
 
                 // Execute the SQL query and get the number of rows affected

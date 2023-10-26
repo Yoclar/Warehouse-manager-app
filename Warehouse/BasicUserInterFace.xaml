@@ -11,5 +11,8 @@
         <ComboBox x:Name="Where" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Where_SelectionChanged"/>
         <Label x:Name="ItemCount" Content="Item count" HorizontalAlignment="Left" Margin="400,55,0,0" VerticalAlignment="Top" Width="390" FontSize="30"/>
         <Button Content="Logout" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Height="34" Width="103" Click="Button_Click"/>
+        <Button x:Name="InsertButton" Content="Insert" Visibility="Visible" HorizontalAlignment="Left" Margin="50,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611"/>
+        <Button x:Name="UpdateButton" Content="Update" Visibility="Visible" HorizontalAlignment="Left" Margin="50,264,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="50,358,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611"/>
     </Grid>
 </Window>

@@ -34,15 +34,30 @@ namespace Warehouse
             db.OpenConnection();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
+            string username = Username.Text;
             Login log = new Login();
-            BasicUserInterFace login = new BasicUserInterFace();
-            if (log.Loginin(Username.Text, db))
+            bool userExist = log.Loginin(username, db);
+            if(userExist)
             {
+                bool isEmployee = log.IsEmployee(username,db);
+                BasicUserInterFace login = new BasicUserInterFace();
                 login.Show();
+                if (!isEmployee)
+                {
+                    login.InsertButton.Visibility = Visibility.Collapsed;
+                    login.UpdateButton.Visibility = Visibility.Collapsed;
+                    
+                }
                 this.Close();
             }
+            else
+            {
+                LoginFailed.Content = "Login failed";
+            }
+         
+            
 
         }
 
@@ -51,11 +66,11 @@ namespace Warehouse
             // Get the username entered in the UserRegister TextBox
             string username = UserRegister.Text;
             // Check if the IsEmployeeCheckbox is checked and set isEmployed accordingly
-            bool isEmployed = IsEmployeeCheckbox.IsChecked ?? false;
+            bool RegisEmployee = IsEmployeeCheckbox.IsChecked == true;
             // Create an instance of the Register class with a database connection
             Register userRegister = new Register(new DataBaseConnect());
             // Call the RegisterUser method to attempt user registration
-            bool registrationSuccess = userRegister.RegisterUser(username, isEmployed);
+            bool registrationSuccess = userRegister.RegisterUser(username, RegisEmployee);
 
             if (registrationSuccess)
             {
@@ -70,13 +85,6 @@ namespace Warehouse
             {
                 MessageBox.Show("Registration failed. Please try again.");
             }
-
-
-
-
-
         }
-
-    
     }
 }

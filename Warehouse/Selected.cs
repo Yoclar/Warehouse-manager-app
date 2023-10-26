@@ -9,11 +9,15 @@ using System.Data;
 using System.Windows;
 using System.Reflection.PortableExecutable;
 using ZstdSharp.Unsafe;
+using System.Windows.Controls;
 
 namespace Warehouse
 {
     internal class Selected
     {
+        private Button InsertButton;
+        private Button UpdateButton;
+       
 
         string[] ret = new string[2];//this will separate the name and the quantity of an item
         public Selected()
@@ -91,6 +95,22 @@ namespace Warehouse
                     allitemreader.Close();
                     return ret;
                 }
+            }
+        }
+
+        public void SetButtonVisibility(bool isEmployed)
+        {
+            if (isEmployed)
+            {
+                InsertButton.Visibility = Visibility.Visible;
+                UpdateButton.Visibility = Visibility.Visible;
+                
+            }
+            else
+            {
+                InsertButton.Visibility = Visibility.Collapsed;   
+                UpdateButton.Visibility = Visibility.Collapsed;
+
             }
         }
     }

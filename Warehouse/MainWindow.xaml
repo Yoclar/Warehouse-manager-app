@@ -9,12 +9,13 @@
    
     <Grid>
         <TextBox x:Name="Username" HorizontalAlignment="Left" Margin="33,88,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="33,131,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="33,131,0,0" VerticalAlignment="Top" Click="Login_Click"/>
         <Label Content="Login here: " HorizontalAlignment="Left" Margin="33,40,0,0" VerticalAlignment="Top"/>
         <Label Content="Register new user: " HorizontalAlignment="Left" Margin="426,40,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="UserRegister" Text="Username" HorizontalAlignment="Left" Margin="426,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="IsEmployeeCheckbox" Content="Employee" HorizontalAlignment="Left" Margin="589,91,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Margin="426,131,0,0" VerticalAlignment="Top" Click="Register_Click"/>
+        <Label x:Name="LoginFailed" Content="" HorizontalAlignment="Left" Margin="206,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.241,-0.125"/>
 
     </Grid>
 </Window>
