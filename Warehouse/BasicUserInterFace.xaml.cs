@@ -85,5 +85,12 @@ namespace Warehouse
             ins.Show();
             this.Close();
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteWindow del = new DeleteWindow();
+            del.Show();
+            this.Close();
+        }
     }
 }

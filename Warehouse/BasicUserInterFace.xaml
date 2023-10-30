@@ -13,6 +13,6 @@
         <Button Content="Logout" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Height="34" Width="103" Click="Button_Click"/>
         <Button x:Name="InsertButton" Content="Insert" Visibility="Visible" HorizontalAlignment="Left" Margin="158,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611" Click="InsertButton_Click"/>
         <Button x:Name="UpdateButton" Content="Update" Visibility="Visible" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611"/>
-        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611" Click="DeleteButton_Click"/>
     </Grid>
 </Window>
