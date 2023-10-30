@@ -33,11 +33,11 @@ namespace Warehouse
             InitializeComponent();
             db.OpenConnection();
         }
+        Login log = new Login();
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             string username = Username.Text;
-            Login log = new Login();
             bool userExist = log.Loginin(username, db);
             if(userExist)
             {
@@ -75,11 +75,18 @@ namespace Warehouse
             if (registrationSuccess)
             {
                 MessageBox.Show("Registration successful!");
+
+                bool isEmployee = log.IsEmployee(username, db);
+                BasicUserInterFace login = new BasicUserInterFace();
+                login.Show();
+                if (!isEmployee)
+                {
+                    login.InsertButton.Visibility = Visibility.Collapsed;
+                    login.UpdateButton.Visibility = Visibility.Collapsed;
+
+                }
                 this.Close();
-                
-                BasicUserInterFace newLogin = new BasicUserInterFace();
-                newLogin.Show();
-               
+
             }
             else
             {

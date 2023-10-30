@@ -78,5 +78,12 @@ namespace Warehouse
             main.Show();
             this.Close();
         }
+
+        private void InsertButton_Click(object sender, RoutedEventArgs e)
+        {
+            InsertPage ins = new InsertPage();
+            ins.Show();
+            this.Close();
+        }
     }
 }

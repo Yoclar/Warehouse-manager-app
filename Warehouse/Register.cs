@@ -22,24 +22,34 @@ namespace Warehouse
         {
             try
             {
-                // Open a database connection
-                db.OpenConnection();
+                   // Open a database connection
+                   db.OpenConnection();
+                Login log = new Login();
+                bool userExist = log.Loginin(username, db);
+                if (!userExist) 
+                {
 
-                // SQL query to insert a new user into the 'users' table
-                string insertUserQuery = "INSERT INTO users (employee, name) VALUES (@employee, @name)";
+                  // SQL query to insert a new user into the 'users' table
+                  string insertUserQuery = "INSERT INTO users (employee, name) VALUES (@employee, @name)";
 
-                // Create a MySqlCommand to execute the query
-                MySqlCommand cmd = new MySqlCommand(insertUserQuery, db.GetConnection());
+                   // Create a MySqlCommand to execute the query
+                  MySqlCommand cmd = new MySqlCommand(insertUserQuery, db.GetConnection());
 
-                // Set the parameters for the query
-                cmd.Parameters.AddWithValue("@employee", isEmployed ? 1 : 0); // 1 for employee, 0 for non-employee
-                cmd.Parameters.AddWithValue("@name", username);
+                 // Set the parameters for the query
+                  cmd.Parameters.AddWithValue("@employee", isEmployed ? 1 : 0); // 1 for employee, 0 for non-employee
+                  cmd.Parameters.AddWithValue("@name", username);
 
-                // Execute the SQL query and get the number of rows affected
-                int rowsAffected = cmd.ExecuteNonQuery();
+                  // Execute the SQL query and get the number of rows affected
+                  int rowsAffected = cmd.ExecuteNonQuery();
 
-                // If at least one row is affected, return true indicating success
-                return rowsAffected > 0;
+                  // If at least one row is affected, return true indicating success
+                  return rowsAffected > 0;
+                }
+                else 
+                {
+                    MessageBox.Show("The UserName already exists!");
+                    return false; 
+                }
             }
             catch (Exception ex)
             {
