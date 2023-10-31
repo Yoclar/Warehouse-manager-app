@@ -55,11 +55,14 @@ namespace Warehouse
         {
             try
             {
+                items.Items.Clear();
                 //Getting all the information from the table
-
-                var a = selected_location.List(Where.SelectedValue.ToString(), db);
-                ItemName.Content = a[0];
-                ItemCount.Content = a[1];
+                var b = selected_location.itemcount(Where.SelectedValue.ToString()!, db);
+                for (int i = 0; i < b; i++)
+                {
+                var a = selected_location.List(Where.SelectedValue.ToString()!, db,i);
+                items.Items.Add(a[0] + " " + a[2] + " " + a[1]);
+                }
                 //if we succesfully connecte to the database we get a success text
 
             }

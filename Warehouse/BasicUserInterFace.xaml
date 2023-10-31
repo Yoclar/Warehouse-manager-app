@@ -7,12 +7,14 @@
         mc:Ignorable="d"
         Title="BasicUserInterFace" Height="450" Width="800">
     <Grid>
-        <Label x:Name="ItemName" Content="Item name" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="390" FontSize="30"/>
+        <Label x:Name="ItemName" Content="Name" HorizontalAlignment="Left" Margin="55,55,0,0" VerticalAlignment="Top" Width="120" FontSize="30"/>
         <ComboBox x:Name="Where" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Where_SelectionChanged"/>
-        <Label x:Name="ItemCount" Content="Item count" HorizontalAlignment="Left" Margin="400,55,0,0" VerticalAlignment="Top" Width="390" FontSize="30"/>
+        <Label x:Name="ItemCount" Content="Quantity" HorizontalAlignment="Left" Margin="555,55,0,0" VerticalAlignment="Top" Width="174" FontSize="30"/>
         <Button Content="Logout" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Height="34" Width="103" Click="Button_Click"/>
         <Button x:Name="InsertButton" Content="Insert" Visibility="Visible" HorizontalAlignment="Left" Margin="158,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611" Click="InsertButton_Click"/>
         <Button x:Name="UpdateButton" Content="Update" Visibility="Visible" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611"/>
         <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611" Click="DeleteButton_Click"/>
+        <Label Content="Brand" HorizontalAlignment="Left" Margin="316,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.713,-0.844" Height="50" Width="93" FontSize="30"/>
+        <ListBox x:Name="items" Margin="10,110,39,26"/>
     </Grid>
 </Window>
