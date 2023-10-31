@@ -95,5 +95,10 @@ namespace Warehouse
             del.Show();
             this.Close();
         }
+
+        private void UpdateButton_Click()
+        {
+
+        }
     }
 }
