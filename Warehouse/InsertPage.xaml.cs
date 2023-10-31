@@ -63,12 +63,25 @@ namespace Warehouse
             #endregion
         }
 
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            // Allow only numeric input
+            if (!IsNumeric(e.Text))
+            {
+                e.Handled = true; // Mark the event as handled to prevent non-numeric input
+            }
+        }
+
+        private bool IsNumeric(string text)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(text, "^[0-9]+$"); //using regex to check numeric input only
+        }
         private void insert_Click(object sender, RoutedEventArgs e)
         {
             BasicUserInterFace basicUserInterFace = new BasicUserInterFace();
             Insertnewelement ins = new Insertnewelement(db);
             MessageBox.Show(""+Where.SelectedIndex);
-            ins.Insert(Category.SelectedIndex, name.Text, description.Text, brand.Text, int.Parse(qty.Text), Where.SelectedIndex);
+            ins.Insert(Category.SelectedIndex, name.Text, description.Text, brand.Text, qty.Text, Where.SelectedIndex);
             basicUserInterFace.Show();
             this.Close();
         }

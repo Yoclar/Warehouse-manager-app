@@ -15,10 +15,21 @@ namespace Warehouse
         {
             this.db = db;
         }
-        public void Insert(int category, string name, string desc, string brand, int qty,int location)
+        public void Insert(int category, string name, string desc, string brand, string quantity,int location)
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(brand) || string.IsNullOrWhiteSpace(quantity))
+                {
+                    MessageBox.Show("Please fill in all required fields");
+                    return;
+                }
+                if (int.Parse(quantity) <= 0)
+                {
+                    MessageBox.Show("You can't add negative amount of item(s), Please visit your doctor");
+                }
+                int qty = int.Parse(quantity);
+
                 //megnézi hogy van e már ilyen tárgy
                 string query = $"SELECT * FROM `items`" +
                     $"Inner Join loctem on loctem.itemid=items.id " +
