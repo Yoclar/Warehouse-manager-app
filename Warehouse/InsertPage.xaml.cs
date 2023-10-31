@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace Warehouse
 {
@@ -74,13 +75,12 @@ namespace Warehouse
 
         private bool IsNumeric(string text)
         {
-            return System.Text.RegularExpressions.Regex.IsMatch(text, "^[0-9]+$"); //using regex to check numeric input only
+            return Regex.IsMatch(text, "^[0-9]+$"); //using regex to check numeric input only
         }
         private void insert_Click(object sender, RoutedEventArgs e)
         {
             BasicUserInterFace basicUserInterFace = new BasicUserInterFace();
             Insertnewelement ins = new Insertnewelement(db);
-            MessageBox.Show(""+Where.SelectedIndex);
             ins.Insert(Category.SelectedIndex, name.Text, description.Text, brand.Text, qty.Text, Where.SelectedIndex);
             basicUserInterFace.Show();
             this.Close();

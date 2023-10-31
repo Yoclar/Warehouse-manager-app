@@ -26,7 +26,7 @@ namespace Warehouse
                 }
                 if (int.Parse(quantity) <= 0)
                 {
-                    MessageBox.Show("You can't add negative amount of item(s), Please visit your doctor");
+                    MessageBox.Show($"You can't add {quantity} negative amount of item(s), Please visit your doctor");
                 }
                 int qty = int.Parse(quantity);
 

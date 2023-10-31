@@ -53,13 +53,6 @@ namespace Warehouse
             return cmd.ExecuteReader();
         }
 
-        public int ExecuteInsert(string query)
-        {
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            return cmd.ExecuteNonQuery();
-
-        }
-
         public MySqlConnection GetConnection()
         {
             return connection;

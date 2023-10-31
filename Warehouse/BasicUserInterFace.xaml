@@ -12,9 +12,10 @@
         <Label x:Name="ItemCount" Content="Quantity" HorizontalAlignment="Left" Margin="555,55,0,0" VerticalAlignment="Top" Width="174" FontSize="30"/>
         <Button Content="Logout" HorizontalAlignment="Left" Margin="658,10,0,0" VerticalAlignment="Top" Height="34" Width="103" Click="Button_Click"/>
         <Button x:Name="InsertButton" Content="Insert" Visibility="Visible" HorizontalAlignment="Left" Margin="158,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611" Click="InsertButton_Click"/>
-        <Button x:Name="UpdateButton" Content="Update" Visibility="Visible" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611"/>
+        <Button x:Name="UpdateButton" Content="Update" Visibility="Visible" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611" Click="UpdateButton_Click"/>
         <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.611" Click="DeleteButton_Click"/>
         <Label Content="Brand" HorizontalAlignment="Left" Margin="316,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.713,-0.844" Height="50" Width="93" FontSize="30"/>
         <ListBox x:Name="items" Margin="10,110,39,26"/>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="555,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.906,0.621" Click="Refresh_Click" />
     </Grid>
 </Window>
