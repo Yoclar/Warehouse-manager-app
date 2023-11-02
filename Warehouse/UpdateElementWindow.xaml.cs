@@ -39,12 +39,12 @@ namespace Warehouse
                 if (string.IsNullOrEmpty(newBrand) && string.IsNullOrEmpty(newDescription))
                 {
                     MessageBox.Show("No changes made. The item will not be updated.");
-                    DialogResult = false; // User canceled the update
+                    DialogResult = false;
                 }
                 else
                 {
                     MessageBox.Show("Changes saved successfully.");
-                    DialogResult = true; // User accepted the changes
+                    DialogResult = true;
                 }
             }
             catch (Exception ex)

@@ -68,7 +68,10 @@ namespace Warehouse
                 else
                 {
                     read.Close();
-                    string query2 = $"SELECT SUM(items.quantity) as endqty FROM `items`Inner Join loctem on loctem.itemid=items.id INNER Join locations On loctem.locationid=locations.id WHERE locations.id={location} GROUP BY loctem.locationid;";
+                    string query2 = $"SELECT SUM(items.quantity) as endqty FROM `items" +
+                        $"`Inner Join loctem on loctem.itemid=items.id" +
+                        $" INNER Join locations On loctem.locationid=locations.id" +
+                        $" WHERE locations.id={location} GROUP BY loctem.locationid;";
                     MySqlDataReader read2 = db.ExecuteQuery(query2);
                     read2.Read();
                     int endqty = int.Parse(read2["endqty"].ToString()!);
@@ -80,7 +83,8 @@ namespace Warehouse
                     read3.Close();
                     if (maxqty >= endqty + qty)
                     {
-                        string newitem = "INSERT INTO `items`( `categoryid`, `name`, `description`, `brand`, `quantity`) VALUES (@categoryid,@name,@desc,@brand,@qty)";
+                        string newitem = "INSERT INTO `items`( `categoryid`, `name`, `description`, `brand`, `quantity`)" +
+                            " VALUES (@categoryid,@name,@desc,@brand,@qty)";
                         MySqlCommand newitemcmd = new MySqlCommand(newitem,db.GetConnection());
                         newitemcmd.Parameters.AddWithValue("@categoryid", category);
                         newitemcmd.Parameters.AddWithValue("@name", name);
@@ -88,6 +92,7 @@ namespace Warehouse
                         newitemcmd.Parameters.AddWithValue("@brand", brand);
                         newitemcmd.Parameters.AddWithValue("@qty", qty);
                         newitemcmd.ExecuteNonQuery();
+                        MessageBox.Show(newitem);
                         string item = $"SELECT * FROM `items` WHERE name=\"{name}\" and brand=\"{brand}\"";
                         MySqlDataReader read4 = db.ExecuteQuery(item);
                         read4.Read();

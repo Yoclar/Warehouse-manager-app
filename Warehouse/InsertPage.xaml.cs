@@ -81,6 +81,12 @@ namespace Warehouse
         {
             BasicUserInterFace basicUserInterFace = new BasicUserInterFace();
             Insertnewelement ins = new Insertnewelement(db);
+
+            if (Category.SelectedIndex == 0 || Where.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select both the category and a location.");
+                return;
+            }
             ins.Insert(Category.SelectedIndex, name.Text, description.Text, brand.Text, qty.Text, Where.SelectedIndex);
             basicUserInterFace.Show();
             this.Close();

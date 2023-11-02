@@ -151,7 +151,7 @@ namespace Warehouse
                         // Execute the SQL query to update the item in the database
                         MySqlCommand updateCommand = new MySqlCommand(updateQuery, db.GetConnection());
                         int rowsAffected = updateCommand.ExecuteNonQuery();
-
+                        
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show($"Item updated successfully.");
