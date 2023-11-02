@@ -80,7 +80,6 @@ namespace Warehouse
         {
             BasicUserInterFace basicUserInterFace = new BasicUserInterFace();
             Insertnewelement ins = new Insertnewelement(db);
-            MessageBox.Show(""+Where.SelectedIndex);
             ins.Insert(Category.SelectedIndex, name.Text, description.Text, brand.Text, qty.Text, Where.SelectedIndex);
             basicUserInterFace.Show();
             this.Close();

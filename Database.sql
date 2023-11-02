@@ -38,8 +38,6 @@ INSERT INTO `loctem`(`itemid`, `locationid`) VALUES (1,1);
 CREATE TABLE users(
 id int(11) PRIMARY KEY not null AUTO_INCREMENT,
 employee tinyint not null,
-name varchar(255) not null,
-locationid int(11),
-FOREIGN KEY (locationid) REFERENCES locations(id)
+name varchar(255) not null
 );
-INSERT INTO `users`(`employee`,`name`, `locationid`) VALUES ('1','Gazsi','1');
+INSERT INTO `users`(`employee`,`name`) VALUES ('1','Gazsi');
