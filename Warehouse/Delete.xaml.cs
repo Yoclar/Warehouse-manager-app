@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,6 +29,21 @@ namespace Warehouse
             db = new DataBaseConnect();
         
         }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            // Allow only numeric input
+            if (!IsNumeric(e.Text))
+            {
+                e.Handled = true; // Mark the event as handled to prevent non-numeric input
+            }
+        }
+
+        private bool IsNumeric(string text)
+        {
+            return Regex.IsMatch(text, "^[0-9]+$"); //using regex to check numeric input only
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try

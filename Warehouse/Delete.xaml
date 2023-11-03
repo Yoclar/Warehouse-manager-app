@@ -9,7 +9,7 @@
     <Grid>
         <ComboBox x:Name="Items" HorizontalAlignment="Left" Margin="16,47,0,0" VerticalAlignment="Top" Width="120" Loaded="Window_Loaded"/>
         <ComboBox x:Name="Locations" HorizontalAlignment="Left" Margin="165,47,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Quantity" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Quantity" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberValidationTextBox"/>
         <Label Content="Please select item" HorizontalAlignment="Left" Margin="16,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.377,0.038"/>
         <Label Content="Please select location" HorizontalAlignment="Left" Margin="165,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.377,0.038"/>
         <Label Content="Quantity" HorizontalAlignment="Center" Margin="0,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.377,0.038"/>
