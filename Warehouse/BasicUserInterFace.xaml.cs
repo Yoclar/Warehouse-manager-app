@@ -62,7 +62,7 @@ namespace Warehouse
                 for (int i = 0; i < b; i++)
                 {
                     var a = selected_location.List(Where.SelectedValue.ToString()!, db, i);
-                    items.Items.Add(a[0] + " " + a[2] + " " + a[1]);
+                    items.Items.Add(a[0] + "\t" + a[2] + "\t" + a[1]);
                 }
                 //if we succesfully connecte to the database we get a success text
 
@@ -187,7 +187,7 @@ namespace Warehouse
                 for (int i = 0; i < b; i++)
                 {
                     var a = selected_location.List(Where.SelectedValue.ToString(), db, i);
-                    items.Items.Add(a[0] + " " + a[2] + " " + a[1]);
+                    items.Items.Add(a[0] + "\t" + a[2] + "\t" + a[1]);
                 }
 
                 MessageBox.Show("Items refreshed successfully.");
