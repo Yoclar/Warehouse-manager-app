@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warehouse"
         mc:Ignorable="d"
-        Title="BasicUserInterFace" Height="450" Width="800">
+        Title="MainMenu" Height="450" Width="800">
     <Grid>
         <Label x:Name="ItemName" Content="Name" HorizontalAlignment="Left" Margin="55,55,0,0" VerticalAlignment="Top" Width="120" FontSize="30"/>
         <ComboBox x:Name="Where" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Where_SelectionChanged"/>
